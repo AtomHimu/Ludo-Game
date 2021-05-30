@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1 id="heading">Guess  Game</h1>
+
+		<div class="dice">
+			<p>Player 1</p>
+			<img src="images/dice1.png" id="dice1">
+		</div>
+		<div class="dice">
+			<p>Player 2</p>
+			<img src="images/dice6.png" id="dice2">
+		</div>
+
+		<div class="clickmebtn">
+			<button type="submit" onclick="myfunc(this)">Click me</button>
+		</div>
+
+
+	</div>
+
+
+<script type="text/javascript">
+ const myfunc =() =>{
+ 	var randfor1=Math.floor(Math.random()*6)+1;
+ 	var randfor2=Math.floor(Math.random()*6)+1;
+ 	
+ 	document.getElementById('dice1').setAttribute('src',`images/dice${randfor1}.png`);
+ 	document.getElementById('dice2').setAttribute('src',`images/dice${randfor2}.png`);
+
+ 	if(randfor1>randfor2){
+ 		document.querySelector('h1').innerHTML="Player 1 Won !!!!";
+ 		// console.log(document.getElementById('heading').value);
+
+ 	} 
+ 	else if(randfor2>randfor1){
+ 		document.querySelector('h1').innerHTML="Player 2 Won !!!!";
+ 		// console.log(document.getElementById('heading').value);
+ 	}	
+ 	else{
+ 		document.querySelector('h1').innerHTML="Draw";
+ 		// console.log(document.getElementById('heading').value);
+ 	}
+ } 	
+</script>
+</body>
+</html>
